@@ -1,0 +1,197 @@
+
+
+  <div id="form_container">
+
+  
+    
+    <div id="panel1" class="panels center">
+      <form name="form">
+      <div class="input_container">
+        <input type="text"  
+              name="name" 
+              ng-model="user.firstName"
+              ng-maxlength=20 
+              required 
+              input-valid
+              step="First Name"
+              tab="General Information"
+              valid="form.name.$valid"
+              />
+        <label ng-class='{movelabelup: user.firstName.length > 0}'>First Name</label>
+        <span class="notifyline"></span>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="middlename" 
+              ng-model="user.middleName" 
+              ng-maxlength=20 
+              input-valid
+              step="Middle Name"
+              tab="General Information"
+              valid="form.middlename.$valid"
+              required />
+        <label ng-class='{movelabelup: user.middleName.length > 0}'>Middle Name</label>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="lastname" 
+              ng-model="user.lastName" 
+              ng-maxlength=20 
+              input-valid
+              step="Last Name"
+              tab="General Information"
+              valid="form.lastname.$valid"
+              required />
+        <label ng-class='{movelabelup: user.lastName.length > 0}'>Last Name</label>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="perferedname" 
+              ng-model="user.perferedName" 
+              ng-maxlength=20 
+              input-valid
+              step="Preferred Name"
+              tab="General Information"
+              valid="form.perferedname.$valid"
+              />
+        <label ng-class='{movelabelup: user.perferedName.length > 0}'>Perfered Name</label>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="mothermaidenname" 
+              ng-model="user.motherMaidenName" 
+              ng-maxlength=20 
+              input-valid
+              step="Mother's Maiden Name"
+              tab="General Information"
+              valid="form.mothermaidenname.$valid"
+              />
+        <label ng-class='{movelabelup: user.motherMaidenName.length > 0}'>Mother Maiden Name</label>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="dob" 
+              ng-model="user.dob" 
+              required
+              input-valid
+              step="Date of Birth"
+              tab="General Information"
+              valid="form.dob.$valid"
+               />
+        <label ng-class='{movelabelup: user.dob.length > 0}'>Date of Birth</label>
+      </div>
+      
+       <div class="input_container">
+        <select 
+            name="gender" 
+            form="form" 
+            ng-model="user.gender"
+            input-valid
+            required
+            step="Gender"
+            tab="General Information"
+            valid="form.gender.$valid"
+            >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label class="movelabelup">Gender</label>
+      </div>
+     
+      </form>
+    </div> <!-- End of Panel 1 -->
+
+    <div id='panel2' class="panels">
+      <form name="form2">
+      <div class="input_container">
+        <input type="text"  
+              name="address" 
+              ng-model="user.address"
+              ng-maxlength=50 
+              required 
+              input-valid
+              step="Address"
+              tab="Contact Information"
+              valid="form2.address.$valid"
+              />
+        <label ng-class='{movelabelup: user.address.length > 0}'>Address</label>
+        <span class="notifyline"></span>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="city" 
+              ng-model="user.city" 
+              ng-maxlength=20 
+              input-valid
+              step="City"
+              tab="Contact Information"
+              valid="form2.city.$valid"
+              required />
+        <label ng-class='{movelabelup: user.city.length > 0}'>City</label>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="state" 
+              ng-model="user.state" 
+              ng-maxlength=20 
+              input-valid
+              step="State"
+              tab="Contact Information"
+              valid="form2.state.$valid"
+              required />
+        <label ng-class='{movelabelup: user.state.length > 0}'>State</label>
+      </div>
+
+      <div class="input_container">
+        <input type="text"  
+              name="zip" 
+              ng-model="user.zip" 
+              ng-maxlength=8
+              input-valid
+              step="Zip Code"
+              tab="Contact Information"
+              valid="form2.zip.$valid"
+              required />
+        <label ng-class='{movelabelup: user.zip.length > 0}'>Zip</label>
+      </div>
+    </form>
+    </div> <!-- End of Panel 2 -->
+  
+    <footer>
+      <button 
+        class="moveright"
+        ng-click="updatePanelMinus()"
+        ng-disabled="backDisabled"
+        >Back
+      </button>
+      
+      <button 
+        id="nextformslide"  
+        class="moveleft" 
+        ng-click="updatePaneladd()"
+        ng-hide="currentIndex == panelCount">Next
+      </button>
+  
+      <button 
+        id="submitform" 
+        type="submit" 
+        ng-click="createUser(user)"
+        ng-show="currentIndex == panelCount">Submit
+      </button>
+
+    </footer> 
+  </div>
+
+
+
+  
+
+
+
