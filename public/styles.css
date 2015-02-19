@@ -1,0 +1,709 @@
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #4B5965;
+}
+
+.nav_side {
+  max-width: 300px;
+  height: 100%;
+  background: #353F48;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav_side .tab {
+  width: 100%;
+  height: 75px;
+  background: #424E59;
+  position: relative;
+  border-bottom: 2px solid #353F48;
+}
+
+.nav_side header .title {
+  padding: 15px 0 0px 25px;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.nav_side header .empName {
+  padding: 0 0 10px 25px;
+  display: block;
+  color: #4EA0EA;
+  font-weight: 600px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav_side header .for {
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+  color: #fff;
+}
+
+.progressCircle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #4EA0EA;
+  border-radius: 20px;
+  position: absolute;
+  top: 16px;
+  right: 15px;
+}
+
+.lrgCheckCircle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #4B5965;
+  border-radius: 15px;
+  position: relative;
+  top: 21px;
+  left: 25px;
+}
+
+ .lrgCheckCircle > .fa.fa-check {
+   position: absolute;
+   font-size: 16px;
+   left: 7px;
+   top: 7px;
+   color: #343E47;
+ }
+
+.smCheckCircle {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: #4EA0EA;
+  border-radius: 11px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.tabTitle {
+  display: inline-block;
+  max-width: 200px;
+  height: 10px;
+  position: relative;
+  top: 11px;
+  left: 30px;
+
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.dropDownBody {
+  width: 100%;
+  height: 100%;
+  /*padding: 20px 0 8px 29px;*/
+  position: relative;
+  background: #353F48;
+}
+
+.dashLine {
+  border-left: 2px dashed #4B5965;
+  height: 90%;
+  position: absolute;
+  top: -2px;
+  left: 40px;
+}
+
+.dropDownBody ul {
+  background: none;
+  padding: 20px 0 10px 0;
+  position: relative;
+}
+
+.dropDownBody li {
+  list-style: none;
+  font-weight: 200;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 6px;
+  z-index: 10;
+  position: relative;
+  left: 31px;
+  box-sizing: border-box;
+}
+
+.dropDownBody li:last-child {
+  padding-bottom: 0;
+}
+
+.smCheckCircle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #4B5965;
+  border-radius: 11px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.checked {
+  background: #4EA0EA;
+}
+
+.completed {
+  color: #fff !important;
+}
+
+.smCheckCircle > .fa.fa-check {
+ position: relative;
+ font-size: 12px;
+ left: 4px;
+ top: 1px;
+ color: #343E47;
+}
+
+.stepTitle {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+.dropDownBody .requiredLabel {
+  display: block;
+  position: relative;
+  left: 30px;
+  top: 0px;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.required {
+  color: #F14E37;
+}
+
+side {
+  width: 300px;
+  height: 100%;
+  float: left;
+}
+forms {
+  float: left;
+  width: calc(100% - 300px);
+  background: #F9F9F9;
+  height: 100%;
+}
+
+
+
+/* ----------------------------
+        Input Styles
+-----------------------------*/ 
+
+.input_container {
+  position: relative;
+  padding-top: 30px;
+  display: inline-block;
+  width: 200px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+input, select {
+  width: 100%;
+  height: 50px;
+  /*margin-bottom: 20px;*/
+  outline: none;
+  background: #fff;
+  border: none;
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  border-bottom: 2px solid #DEDEDE;
+  border-radius: none;
+ /* box-shadow: 0px 1px 2px 0px rgba(212,212,212,0.50);*/
+
+}
+
+label {
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  transition: 0.8s;
+  color: #9A9EA3;
+  font-family: 'Open Sans', sans-serif;
+  font-style: 200;
+  font-size: 12px; 
+}
+
+
+
+input:focus + label {
+  bottom: 60px;
+  color: #4B5965;
+}
+
+.movelabelup {
+  bottom: 60px !important;
+  color: #4B5965 !important;
+}
+
+
+.notifyline {
+  width: 100%;
+  height: 3px;
+  background: green;
+}
+
+#form_container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.panels {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.8s ease-out;
+  left: 100%;
+  opacity: 0;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.center {
+  left: 0;
+  opacity: 1
+}
+
+.left {
+  left: -100%;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #ccc;
+  padding-left: 30px;
+  padding-top: 8px;
+}
+
+.test {
+  background: yellow;
+  width: 100px;
+  height: 80px;
+}
+
+
+button {
+  /*padding: 10px 30px;
+  color: #fff;
+  background: #4EA0EA;*/
+  outline: none;
+  border: none;
+}
+
+button:disabled {
+  background: #424E59;
+}
+
+
+
+
+
+.employeecontainer {
+  margin: 0 auto 30px auto;
+  background: red;
+  height: 50px;
+  width: 400px;
+}
+
+.view_wrapper {
+  width: 100%;
+  min-height: 100%;
+  background: #F9F9F9;
+  
+}
+
+
+/* --------------------------
+      Login Page Styles
+---------------------------*/
+.view_wrapper_login {
+  width: 100%;
+  min-height: 100%;
+  background: #343E47;
+  
+}
+
+.login_container {
+  width: 400px;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+}
+
+.login_title {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #343E47;
+  transition: 1s ease;
+  position: relative;
+  top: 0;
+  opacity: 0;
+  height: 80px;
+}
+
+.animate_title {
+  font-size: 25px;
+  opacity: 1;
+  top: 20px;
+}
+
+
+.login_container input {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  outline: none;
+  background: #fafafa;
+  border: none;
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  border-bottom: 2px solid #DEDEDE;
+  border-radius: none;
+ /* box-shadow: 0px 1px 2px 0px rgba(212,212,212,0.50);*/
+}
+
+.login_container .input_container {
+  position: relative;
+  padding-top: 30px;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.input_container:first-child {
+   margin-bottom: 10px;
+}
+
+.login_container label {
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  left: 60px;
+  transition: 0.8s;
+  color: #9A9EA3;
+  font-family: 'Open Sans', sans-serif;
+  font-style: 200;
+  font-size: 12px; 
+}
+
+.loginbtn {
+  width: 80%;
+  padding: 15px 0;
+  margin: 0 auto;
+  display: block;
+  transition: 0.8s;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #4EA0EA;
+  border: 1px solid #4EA0EA;
+  background: none;
+}
+
+.loginbtn:hover {
+  background: #4EA0EA;
+  color: #fff;
+}
+
+.registerbtn {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  width: 80%;
+  padding: 15px 0;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 25px;
+  transition: 0.8s;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  color: #aaa;
+}
+
+.registerbtn:hover {
+  border: 1px solid #4EA0EA;
+  background: #4EA0EA;
+  color: #fff;
+}
+
+/* ===============================
+
+  Dashboard
+
+=================================*/
+
+  nav {
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav .userinfo_container {
+    width: 115px;
+    height: 100%;
+    float: right;
+
+  }
+
+  nav .userinfo_container .caret-icon {
+    
+    float: right;
+    width: 40px;
+    height: 100%;
+    text-align: left;
+    position: relative;
+    top: 30px;
+
+  }
+
+  nav .userinfo_container .fa.fa-caret-down {
+    color: #343E47;
+    font-size: 22px;
+    transition: 0.8s;
+  }
+
+.userinfo_container:hover .fa.fa-caret-down {
+  color: #4EA0EA;
+}
+
+  nav .userinfo_container .userprofile_img_container {
+    
+    float: right;
+    width: 75px;
+    height: 100%;
+    text-align: center;
+  }
+
+  nav .userinfo_container .userprofile_img_container img {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 10px;
+  }
+
+
+
+  .dir_useraccount_slidein_container {
+    width: 200px;
+    background: red;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 80px;
+    right: -200px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s;
+  }
+
+  .useraccount_slidein {
+    right: 0px !important;
+  }
+
+  .dir_useraccount_slidein_container  > header {
+    height: 60px;
+    width: 100%;
+    background: #eee;
+    padding-left: 10px;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .dir_useraccount_slidein_container header > .position {
+    font-size: 12px;
+    font-weight: 400;
+    color: #aaa;
+  }
+
+  .dir_useraccount_slidein_container ul li {
+    display: block;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+    padding-left: 10px;
+    transition: background 0.7s;
+  }
+
+  .dir_useraccount_slidein_container ul li:hover {
+    background: #F9F9F9;
+  }
+
+/* ===============================
+
+  Create User Modal
+
+=================================*/ 
+  #overlay {
+    width: 100%;
+    min-height: 100%;
+    z-index: 10;
+    position: absolute;
+    background: rgba(0,0,0,0.5)
+  }
+
+  #createusermodal {
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    z-index: 100;
+    position: fixed;
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20px;
+    border-radius: 2px;
+  }
+
+  #createusermodal > header {
+    height: 80px;
+    border-bottom: 1px solid #eee;
+    background: #ccc;
+  }
+
+  #createusermodal header > span {
+    line-height: 80px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding-left: 50px;
+  }
+
+  #createusermodal form {
+    width: 450px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  #createusermodal .input_container > input {
+    background: #e1e1e1;
+    width: 100%;
+  }
+
+  #createusermodal  > footer {
+    background: none;
+    border-top: 1px solid #eee;
+    height: 80px;
+  }
+
+  #createusermodal footer > div {
+    float: right;
+    padding-right: 20px;
+    position: relative;
+    top: 8px;
+  }
+
+  .btn_cancel {
+    width: 125px;
+    height: 48px;
+    background: #E74C3C;
+    line-height: 45px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #343E47;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 2px;
+
+  }
+
+  .btn_next {
+    width: 125px;
+    height: 48px;
+    background: #2ECC71;
+    line-height: 45px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 2px;
+  }
+
+  .onboardnowheader {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #343E47;
+    font-size: 22px;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+  .onboardnowheader > span {
+    color: #4EA0EA;
+  }
+
+  #onboardquestion {
+    width: 80%;
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+
+  .onboardleft, .onboardright {
+    float: left;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+    
+  }
+
+  .onboardright > span   {
+    display: block;
+    background: red;
+  }
+
+  #onboardquestion .main {
+    position: relative;
+    top: 40px;
+    height: 200px;
+    width: 100%;
+  }

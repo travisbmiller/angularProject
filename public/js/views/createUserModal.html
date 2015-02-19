@@ -1,0 +1,65 @@
+<div id="overlay"></div>
+<div id="createusermodal" class="animated fadeInDown">
+    <header>
+        <span>Add New User</span>
+    </header>
+    
+    <section id="createuserform" ng-show="showForm">
+        <form>
+            <div class="input_container">
+                <input type="text"  
+                  name="firstname" 
+                  ng-model="newUser.firstName" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.firstName.length > 0}'>First Name</label>
+            </div>
+
+            <div class="input_container">
+                <input type="text"  
+                  name="lastname" 
+                  ng-model="newUser.lastName" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.lastName.length > 0}'>Last Name</label>
+            </div>
+
+            <div class="input_container">
+                <input type="text"  
+                  name="email" 
+                  ng-model="newUser.email" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.email.length > 0}'>Email Address</label>
+            </div> 
+        </form>
+    </section>
+
+    <section id="onboardquestion" class="animated fadeInUp" ng-show="nowBoardNow">
+        
+        <div class="onboardnowheader">
+            Would you like to on-board <span>{{ newUser.firstName }}</span> now?
+        </div>
+        
+        <section class="cf main">
+            
+            <div class="onboardleft">
+            
+            <button class="btn_cancel" ng-click="no()">No</button>
+            </div>
+
+            <div class="onboardright">
+
+            <button class="btn_next" ng-click="yes(newUser.email)">Yes</button>
+            </div>
+
+        </section>
+    </section>
+
+    <footer ng-hide="nowBoardNow">
+        <div>
+            <button class="btn_cancel" ng-click="cancel(newUser)">Cancel</button>
+            <button class="btn_next" ng-click="next(newUser)">Next</button>
+        </div>
+    </footer>
+</div>
