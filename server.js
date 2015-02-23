@@ -11,6 +11,7 @@ var App = Express(),
 
 // Controllers -----------------------
 var EmployeeCtrl = require('./api/controllers/employeeCtrl')
+var NoteCtrl = require('./api/controllers/noteCtrl')
 var User = require('./api/models/userModel');
 
 // Mongoose Contection ---------------
@@ -43,7 +44,6 @@ Passport.serializeUser(function(user, done) {
 });
 
 Passport.deserializeUser(function(obj, done) {
-    console.log(obj)
     done(null, obj);
 });
 
@@ -75,11 +75,16 @@ var logOutLogIn = function (req, res, next){
     next();
 }
 
+var isAdmin = function (req, res, next) {
+    if (req.isAuthenticated() && req.user.userRole === "Admin") return next();
+    res.status(401).end()
+}
+
+
 // Api Routes ------------------------
 
 
 App.post('/api/auth', logOutLogIn, Passport.authenticate('local'), function (req, res) {
-    console.log(req.body);
     return res.status(200).json(req.user)
 });
 
@@ -110,6 +115,11 @@ App.post('/api/employee', EmployeeCtrl.create)
 App.put('/api/employee/:id', EmployeeCtrl.update)
 App.get('/api/employee/:id', EmployeeCtrl.getUser)
 
+App.post('/api/employees', EmployeeCtrl.getUsers)
+
+App.post('/api/addnote', NoteCtrl.addNote)
+App.get('/api/getnotes/:id', NoteCtrl.getNotes)
+App.get('/api/admin/dashboard/:id', EmployeeCtrl.getUser)
 
 
 App.listen(port, function () {

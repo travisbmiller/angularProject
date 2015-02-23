@@ -1,0 +1,25 @@
+<header class="mainbodystates_header">
+    <div class="mainbody_header_title animated fadeIn">
+        Employee: {{ profileUser.fullName }}<br>
+        
+    </div>
+    
+    <div class="header_btns">
+        
+    <div>
+</header>
+
+<div class="mainbodystates animated fadeInUp"> 
+    Employee Profile Information Here  <br>
+
+    Notes: {{ notes.length }}
+
+    <div ng-repeat="note in notes">
+        <span>Submitted: {{note.createAt}}<span><br>
+        <span>Submitted By: {{ note.submittedBy.firstName}}<span><br>
+        <span>Subject: {{ note.subject }}<span><br>
+        <span>Note: {{ note.note }}<span>
+        <br>
+        <hr>
+    </div>
+</div>

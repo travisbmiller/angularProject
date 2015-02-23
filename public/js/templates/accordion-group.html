@@ -1,0 +1,15 @@
+<div class="">
+          
+    <div class="nav_tag" ng-click="toggleOpen()" accordion-transclude="heading" ng-class="{'highlightedtab': isOpen == true }">
+        <span class="rotate_arrow" ng-class="{'rotate_arrow_down': isOpen == true}"><i class="fa fa-angle-up"></i></span>
+        <span class="nav_tag_icon"><i class="fa fa-users" ng-hide="isOpen"></i><span>
+        <span class="nav_tag_icon_slide_in"><i class="fa fa-users slide_in_icon" ng-class="{'slide_in_icon_stay': isOpen == true}"></i><span>
+        <span class="nav_tag_title">{{heading}}<span>
+
+    </div>
+       
+    <div class="" collapse="!isOpen">
+        <div class="" ng-transclude></div>
+    </div>
+
+</div> 

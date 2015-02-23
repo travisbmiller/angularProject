@@ -7,12 +7,14 @@
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,500,400italic' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-      
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="animate.css">
       <link rel="stylesheet" href="styles.css">
     </head>
-    <body ng-controller="MainController">
-      <ng-view></ng-view>
+    <body>
+      <div ui-view class="main_ui_view">
+
+      </div>
        
       
       
@@ -21,8 +23,11 @@
 
       <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
       
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       
+      <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+      
+
 
       <script src="app.js"></script>
 
@@ -31,11 +36,13 @@
       <script src="js/controllers/employeesListController.js"></script>
       <script src="js/controllers/employeeCtrl.js"></script>
       <script src="js/controllers/onboardCtrl.js"></script>
+      <script src="js/controllers/adminDashboardCtrl.js"></script>
       
      
       <script src="js/services/userService.js"></script>
       <script src="js/services/formService.js"></script>
       <script src="js/services/loginService.js"></script>
+      <script src="js/services/adminService.js"></script>
       
 
       <script src="js/directives/sideBarDirective.js"></script>

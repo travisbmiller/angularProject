@@ -18,8 +18,10 @@ app.directive('userAccountSidein', function() {
         $('#usericon').on('click', function () {
             //Slide in User Account Dropdown
             if ($("#useraccountslidein").hasClass('useraccount_slidein')) {
-                $("#useraccountslidein").removeClass('useraccount_slidein');
+                $("#useraccountslidein").removeClass('useraccount_slidein')
+
             } else {
+               
                 $("#useraccountslidein").addClass('useraccount_slidein');
             };
         });

@@ -11,12 +11,22 @@ app.service("UserService", function ($q, $http) {
       url: "/api/employee/" + id 
     }).then(function (data) {
       console.log("successful")
+      console.log("data", data.data)
       dfd.resolve(data.data)
     }, function (err) {
       dfd.reject(err)
     })
 
     return dfd.promise
+   }
+
+   this.getUsers = function () {
+
+    return $http({
+      method: "POST",
+      url: "/api/employees"
+    })
+
    }
 
   this.createNewUser = function (user) {
@@ -30,8 +40,12 @@ app.service("UserService", function ($q, $http) {
         firstName: user.firstName,
         lastName: user.lastName,
         fullName: user.firstName + " " + user.lastName,
+        store: user.store,
         email: user.email,
-        password: "password"
+        position: user.position,
+        password: "password",
+        status: "pending",
+        userRole: "user"
       }
     })
   }
@@ -41,6 +55,21 @@ app.service("UserService", function ($q, $http) {
       method: "PUT",
       url: "/api/employee/" + user._id,
       data: user
+    })
+  }
+
+  this.addNote = function (note) {
+    return $http({
+      method: "POST",
+      url: 'api/addnote',
+      data: note
+    })
+  }
+
+  this.getNotes = function (id) {
+    return $http({
+      method: "GET",
+      url: 'api/getnotes/' + id
     })
   }
   

@@ -1,0 +1,51 @@
+
+    <div class="admin_dashboard_wrapper">
+    
+        <nav>
+            
+            <user-account-sidein user="user"></user-account-sidein>
+            <div class="userinfo_container" id="usericon">
+                <span class="caret-icon"><i class="fa fa-caret-down"></i></span>
+                <div class="userprofile_img_container">
+                    <img src='../../imgs/user.png'>
+                </div>
+            </div>
+        </nav> <!-- End of nav -->
+
+        <aside>
+<div>
+  <accordion close-others="oneAtATime">
+    <accordion-group heading="Employees" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        <div class="drop_down_nav_body animated fadeIn">
+             <a ui-sref="adminDashboard.employees">
+                 <div class="drop_down_nav_tag animated fadeIn cf">   
+                    <span class="drop_down_nav_tag_icon"><i class="fa fa-user"></i></span>
+                    <span class="drop_down_nav_tag_title"> List Employees<span>
+                </div>
+            </a>
+
+             <a ui-sref="adminDashboard.addemployee">
+                <div class="drop_down_nav_tag animated fadeIn cf">   
+                    <span class="drop_down_nav_tag_icon"><i class="fa fa-user-plus"></i></span>
+                    <span class="drop_down_nav_tag_title"> Add New Employee<span>
+                </div>
+            </a>
+
+            <div class="drop_down_nav_tag animated fadeIn cf">   
+                <span class="drop_down_nav_tag_icon"><i class="fa fa-user-times"></i></span>
+                <span class="drop_down_nav_tag_title"> Terminate Employee<span>
+            </div>
+        </div>
+    </accordion-group>
+  </accordion>
+</div>
+
+
+
+
+        </aside> <!-- End of Side Bar -->
+
+        <section class="mainbody">
+            <ui-view></ui-view>
+        </section>  <!-- Main body -->
+    </div>

@@ -2,6 +2,9 @@ var app = angular.module('myApp');
 
 app.controller('UserDashboardCtrl', function($scope, UserData, $location) {
 
+    
+    console.log(UserData.onBoardCompleted)
+
   if (!UserData.onBoardCompleted) {
     $location.path('/onboard/' + UserData._id)   
   }

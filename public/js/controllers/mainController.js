@@ -19,8 +19,11 @@ app.controller('MainController', function ($scope, $timeout, $location, loginSer
     loginService.logIn(loginInfo)
       .then(function (user) {
         
-        console.log("data from MainCtrl ---- ", user);
-        $location.path('/employee/' + user._id);
+        if (user.userRole !== "Admin") {
+            $location.path('/dashboard/' + user._id);
+         } else {
+            $location.path('/a/dashboard/' + user._id);
+         }
 
       }, function (err) {
         console.log("Err --- ", err)

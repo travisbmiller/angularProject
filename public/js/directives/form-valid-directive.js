@@ -8,8 +8,9 @@ app.directive('inputValid', function() {
       valid: '='
     },
     
-    controller: function($scope, formService) {
+    controller: function($scope, formService, $timeout) {
        $scope.data = formService.data
+       $scope.timeout = $timeout
     },
     link: function (scope, el, attrs) {
     
@@ -28,9 +29,8 @@ app.directive('inputValid', function() {
       tabCompleteCheck(scope.data[0])
 
      // onload trigger blue
-     
 
-      el.blur(function() {
+     var validate = function() {
         if (el.val() !== "") {
           if (scope.valid) {
             for (var i = 0; i < scope.data.length; i++){
@@ -77,7 +77,10 @@ app.directive('inputValid', function() {
             }
           }
         }
-      })
+      }
+
+      el.blur(validate)
+      scope.timeout(validate, 0, false);
     }
 
   }

@@ -1,5 +1,5 @@
 var app = angular.module('myApp');
-app.directive('forms', function($route) {
+app.directive('forms', function($stateParams) {
  
   return {
 
@@ -20,6 +20,24 @@ app.directive('forms', function($route) {
           }, function (err) {
             console.log("err ", err)
           })
+      }
+
+      $scope.logout = function () {
+        $location.path('/api/logout')
+      }
+
+      $scope.goToProfile = function (id) {
+        var user = {
+          "_id" : id,
+          "onBoardCompleted": true
+        }
+        UserService.UpdateUser(user).then(function (res) {
+          console.log(res)
+          $location.path('/dashboard/' + id)
+        }, function (err) {
+          console.log(err)
+        })
+        
       }
       
     },

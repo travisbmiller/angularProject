@@ -106,6 +106,8 @@
       </form>
     </div> <!-- End of Panel 1 -->
 
+
+
     <div id='panel2' class="panels">
       <form name="form2">
       <div class="input_container">
@@ -164,6 +166,39 @@
     </form>
     </div> <!-- End of Panel 2 -->
   
+    <div id='panel3' class="panels">
+      
+      <div class="onboardnowheader">
+            Congrat! <span>{{ user.firstName }}</span>, 
+            <br>
+            
+            You have completed the on-boarding process. 
+        </div>
+        <br>
+        <section class="cf main">
+            <div class="onboardnowheader">
+            <br>
+            Would you like to continue to your profile or logout?
+            <br>
+            
+            
+        </div>
+            <div class="onboardleft">
+            
+            <button class="btn_cancel" ng-click="logout()">Log Out</button>
+            </div>
+
+            <div class="onboardright">
+
+            <button class="btn_next" ng-click="goToProfile(user._id)">Go to Profile</button>
+            </div>
+
+        </section>
+      
+
+
+    </div> <!-- End of Panel 3 -->
+
     <footer>
       <button 
         class="moveright"

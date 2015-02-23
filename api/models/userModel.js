@@ -12,6 +12,7 @@ var userSchema = Mongoose.Schema({
     gender: String,
     motherMaidenName: String,
     status: String,
+    stores: [String],
     store: String,
     position: String,
     dob: String,
@@ -23,7 +24,7 @@ var userSchema = Mongoose.Schema({
     addressDetails: String,
     city: String,
     state: String,
-    zip: Number,   
+    zip: String,   
     createAt: { type: Date, required: true, default: Date.now }
 })
 

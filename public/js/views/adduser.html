@@ -1,0 +1,82 @@
+<header class="mainbodystates_header">
+    <div class="mainbody_header_title animated fadeIn">Add New User</div>
+    <div class="header_btns animated fadeIn">
+        <button class="btn_cancel" ng-click="cancel(newUser)">Cancel</button>
+        <button class="btn_next" ng-click="next(newUser)">Next</button>
+    <div>
+</header>
+
+<div class="mainbodystates animated fadeInUp" >
+    <section>
+        <form id="createuserform" ng-show="showForm">
+            <div class="input_container">
+                <input type="text"  
+                  name="firstname" 
+                  ng-model="newUser.firstName" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.firstName.length > 0}'>First Name</label>
+            </div>
+
+            <div class="input_container">
+                <input type="text"  
+                  name="lastname" 
+                  ng-model="newUser.lastName" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.lastName.length > 0}'>Last Name</label>
+            </div>
+
+            <div class="input_container">
+                <input type="text"  
+                  name="email" 
+                  ng-model="newUser.email" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.email.length > 0}'>Email Address</label>
+            </div> 
+
+            <div class="input_container">
+                <input type="text"  
+                  name="email" 
+                  ng-model="newUser.position" 
+                  ng-maxlength=20 
+                  required />
+                <label ng-class='{movelabelup: newUser.position.length > 0}'>Position</label>
+            </div> 
+
+          
+          <select id="stores" ng-model="newUser.store" ng-options="o as o for o in user.stores"></select>
+
+        </form>
+    </section>
+
+    <section id="onboardquestion" class="animated fadeInUp" ng-show="onboardNow">
+        
+        <div class="onboardnowheader">
+            Would you like to on-board <span>{{ newUser.firstName }}</span> now?
+        </div>
+        
+        <section class="cf main">
+            
+            <div class="onboardleft">
+            
+            <button class="btn_cancel" ng-click="no()">No</button>
+            </div>
+
+            <div class="onboardright">
+
+            <button class="btn_next" ng-click="yes(newUser.email)">Yes</button>
+            </div>
+
+        </section>
+    </section>
+
+    <!-- <div ng-show="nowBoardNow">
+        <div>
+            <button class="btn_cancel" ng-click="cancel(newUser)">Cancel</button>
+            <button class="btn_next" ng-click="next(newUser)">Next</button>
+        </div>
+    </div> -->
+
+</div>

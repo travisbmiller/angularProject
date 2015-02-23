@@ -1,0 +1,32 @@
+<note-modal ng-show="show" model="show" user="seletedUser" submittedby="user"></note-modal>
+
+<header class="mainbodystates_header">
+    <div class="mainbody_header_title animated fadeIn">
+        Employees<br>
+        <span class="mainbody_header_subtitle">Showing {{ users.length }} results</span>
+    </div>
+    
+    <div class="header_btns">
+        
+    <div>
+</header>
+
+<div class="mainbodystates animated fadeInUp"> 
+
+    <div ng-repeat="user in users">
+        <span>Name:{{ user.fullName }}</span><br>
+        <span>Email: {{ user.email }}<span><br>
+        <span>Position: {{ user.position }}</span><br>
+        <span>Store: {{user.store }} </span><br>
+        <span>Status: {{ user.status }}</span>
+        <br>
+        <button class="btn_next" ng-click="showNoteModel(user)">Add a Note</button>
+        <button class="btn_next" ng-click="goToProfile(user._id)">Go To Profile</button>
+        <br>
+        <hr>
+    </div>
+
+
+
+
+</div>

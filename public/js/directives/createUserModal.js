@@ -1,60 +1,45 @@
 var app = angular.module('myApp');
-app.directive('createUserModal', function() {
+app.directive('noteModal', function() {
  
   return {
 
     restrict: 'E',
     templateUrl: 'js/views/createUserModal.html',
     scope: {
-        model: '='
+        user: '=',
+        model: "=",
+        submittedby: "="
     },
-    controller:  function ($scope, $location, UserService, loginService) {
+    controller:  function ($scope, $location, UserService) {
         
-        $scope.showForm = true;
-        $scope.nowBoardNow = false
-
-        $scope.next = function (newUser) {
-            console.log(newUser)
-            UserService.createNewUser(newUser)
-                .then(function (res) {
-                    console.log(res)
-                     $scope.showForm = false;
-                     $scope.nowBoardNow = true;
-                }, function (err) {
-                    console.log(err)
-                })
-        }
-
-        $scope.cancel = function () {
-            $scope.newUser = {};
+        console.log($scope.user)
+        console.log($scope.submittedby)
+        $scope.cancel = function (note) {
+            $scope.note = {};
             $scope.model = false;
         }
 
-        $scope.no = function () {
-            $scope.newUser = {}
-            $scope.model = false;
-        }
+        $scope.submitNote = function (note) {
+            
+            
 
-        $scope.yes = function (user) {
-            console.log(user)
-           
-            // clear user obj
-            //$scope.newUser = {}
-            // close modal
-            //$scope.model = false;
+            var newNote = {
+                user: $scope.user._id,
+                submittedBy: $scope.submittedby._id,
+                subject: note.subject,
+                note: note.text
+            }
 
-            // logout current user
-                // go to api to log out
-                // go in new user + redirect
-            loginService.logOutLogIn(user)
+            console.log(newNote)
+
+            UserService.addNote(newNote)
                 .then(function (data) {
                     // clear user obj
-                    $scope.newUser = {}
+                    $scope.note = {}
                     // close modal
                     $scope.model = false;
-                    // redirect 
-                    $location.path('/employee/' + data._id);
-                    
+                
+                
                 }, function (err) {
 
                     console.log("Err --- ",err)
