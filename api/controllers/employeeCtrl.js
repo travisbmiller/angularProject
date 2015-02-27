@@ -33,6 +33,8 @@ module.exports = {
 
     update: function (req, res) {
         var user = req.params.id;
+        delete req.body._id
+        
         User.findOneAndUpdate({_id: user}, req.body, function (err, results) {
             if (err) return res.status(500).json(err)
                 return res.status(200).json(results)
