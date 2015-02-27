@@ -131,6 +131,5 @@ App.post('/api/formtemplatecreate', FormTemplateCtrl.create)
 App.get('/api/forms', FormTemplateCtrl.get)
 App.get('/api/form/:id', FormTemplateCtrl.getOne)
 
-App.listen(port, function () {
-    console.log("Listing on port --- " + port);
+App.listen(process.env.Express_PORT || port);
 });
