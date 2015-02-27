@@ -1,6 +1,41 @@
 var app = angular.module('myApp');
 
-app.service('formService', function() {
+app.service('formService', function($http) {
+  
+
+  this.getForms = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/forms'
+    }) 
+  }
+
+  this.getForm = function (id) {
+    console.log("hit")
+    return $http({
+      method: 'GET',
+      url: '/api/form/' + id
+    })
+  }
+
+  this.getFormActivityByUser = function (id) {
+    return $http({
+      method: 'GET',
+      url: '/api/employee/openforms/' + id
+    })
+  }
+
+  this.submitForm = function (data) {
+    console.log("hit")
+    return $http({
+      method: 'POST',
+      url: '/api/formcreate',
+      data: data
+    })
+  }
+
+
+
   this.data =
     [
       {

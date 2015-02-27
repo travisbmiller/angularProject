@@ -1,0 +1,39 @@
+<header class="mainbodystates_header">
+    <div class="mainbody_header_title animated fadeIn">
+        <div class="admin_page_user_header cf">
+            
+            Forms
+             
+        </div>
+    </div>
+    
+    <div class="header_btns">
+        
+    <div>
+</header>
+
+<div class="mainbodystates animated fadeInUp"> 
+    
+    
+
+    <div class="block">
+        <header>
+            <span class="title">Forms</span>
+            <span class="results">Showing {{forms.length}} results</span>
+        </header>
+
+        <section>
+            <div class="item" ng-repeat="form in forms">
+            <ul>
+                <li class="each">{{form.name }}</li>
+            </ul>
+            <span class="select_form" ng-click="goToForm(form._id)"><i class="fa fa-dot-circle-o"></i></span>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    
+</div>

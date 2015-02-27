@@ -1,7 +1,16 @@
 <header class="mainbodystates_header">
     <div class="mainbody_header_title animated fadeIn">
-        Employee: {{ profileUser.fullName }}<br>
-        
+        <div class="admin_page_user_header cf">
+            <div class="user_pic_placeholder_admin_page">
+                <div class="status_circle_admin_page"></div>
+            </div>
+            
+            <div class="admin_page_user_info_container">
+                <span class="header"> {{ profileUser.fullName }} </span>
+                <span class="body"> {{ profileUser.position}} <span class="light">at</span> {{profileUser.store }}</span>
+            </div>
+             
+        </div>
     </div>
     
     <div class="header_btns">
@@ -10,16 +19,28 @@
 </header>
 
 <div class="mainbodystates animated fadeInUp"> 
-    Employee Profile Information Here  <br>
+    
+    
 
-    Notes: {{ notes.length }}
+    <div class="block">
+        <header>
+            <span class="title">Notes</span>
+            <span class="results">Showing {{notes.length}} results</span>
+        </header>
 
-    <div ng-repeat="note in notes">
-        <span>Submitted: {{note.createAt}}<span><br>
-        <span>Submitted By: {{ note.submittedBy.firstName}}<span><br>
-        <span>Subject: {{ note.subject }}<span><br>
-        <span>Note: {{ note.note }}<span>
-        <br>
-        <hr>
+        <section>
+            <div class="item" ng-repeat="note in notes">
+            <ul>
+                <li class="each">{{note.createAt | date:"MM/dd/yyyy 'at' h:mma"}}</li>
+                <li class="each">{{ note.submittedBy.firstName}}</li>
+                <li class="each">{{ note.subject }}</li>
+            </ul>
+            </div>
+        </section>
+
     </div>
+
+
+
+    
 </div>

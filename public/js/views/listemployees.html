@@ -14,16 +14,43 @@
 <div class="mainbodystates animated fadeInUp"> 
 
     <div ng-repeat="user in users">
-        <span>Name:{{ user.fullName }}</span><br>
-        <span>Email: {{ user.email }}<span><br>
-        <span>Position: {{ user.position }}</span><br>
-        <span>Store: {{user.store }} </span><br>
-        <span>Status: {{ user.status }}</span>
-        <br>
-        <button class="btn_next" ng-click="showNoteModel(user)">Add a Note</button>
-        <button class="btn_next" ng-click="goToProfile(user._id)">Go To Profile</button>
-        <br>
-        <hr>
+        
+        <div class="user_container_wrapper">  
+            <div class="user_container cf">
+
+            <div class="user_pic_placeholder">
+              <div class="status_circle"></div>
+            </div>
+
+            <div class="user_info_container"> 
+              <div class="top">{{ user.fullName }}
+                <button class="btn_profile" ng-click="goToProfile(user._id)">Go To Profile</button>
+                
+              </div>
+              <div class="bottom cf">
+              <ul>
+                <li>{{user.store }}</li>
+                <li>{{ user.position }}</li>
+                <li>{{ user.status }}</li>
+                <li>Date Info</li>
+              </ul>
+              </div>
+
+             </div>
+
+          </div>
+         <div class="user_container_bar cf">
+            <ul>
+                <li>Cell:<span class="bold">555-555-5555</span> </li>
+                <li>Email:  <span class="bold">{{ user.email }}</span></li>
+              </ul>
+            <i ng-click="showNoteModel(user)" class="fa fa-pencil-square-o"></i>
+         </div>
+
+    </div>
+
+        
+       
     </div>
 
 

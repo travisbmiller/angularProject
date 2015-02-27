@@ -1,0 +1,50 @@
+<header class="mainbodystates_header">
+    <div class="mainbody_header_title animated fadeIn">
+        <div class="admin_page_user_header cf">
+            Form Submission  
+        </div>
+    </div>
+    
+    <div class="header_btns">
+        
+    <div>
+</header>
+
+<div class="mainbodystates animated fadeInUp"> 
+
+    <div class="block">
+        <!-- <create-forms info="formdata" user="user"></create-form> -->
+
+        <div id="formview" class="block">
+            
+            <header>
+             {{ formData.name }} 
+             </header>
+
+            <div id="inputs">
+    
+
+               <form name="newForm" novalidate>
+                   
+                   <div class="input_wrapper" ng-repeat="input in formData.inputs">
+                        <label>{{ input.label }}</label>
+                        <input type="text" ng-model="form.inputData[input.label]"> 
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+            <div class="form_footer">
+                
+                <button class="submit" ng-click="submit(form)">Submit</button>
+                <button class="cancel">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

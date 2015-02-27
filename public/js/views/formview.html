@@ -1,0 +1,21 @@
+
+<div id="formview" class="block">
+    <header>
+        {{ formName }} 
+    </header>
+
+    <div id="inputs">
+       <div class="input_wrapper" ng-repeat="input in inputs">
+            <label>' + input.label + '</label>' +
+            <input type="text" ng-model="{{input.model}}" placeholder="{{input.label}}">
+        </div>
+        
+    </div>
+
+    <div class="form_footer">
+        
+        <button class="submit" ng-click="go(form)">Submit</button>
+        <button class="cancel">Cancel</button>
+    </div>
+
+</div>

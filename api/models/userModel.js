@@ -24,7 +24,13 @@ var userSchema = Mongoose.Schema({
     addressDetails: String,
     city: String,
     state: String,
-    zip: String,   
+    zip: String,  
+    phone: [ 
+        {
+        kind: String,
+        number: String
+        }
+    ],
     createAt: { type: Date, required: true, default: Date.now }
 })
 

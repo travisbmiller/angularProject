@@ -13,6 +13,8 @@ var App = Express(),
 var EmployeeCtrl = require('./api/controllers/employeeCtrl')
 var NoteCtrl = require('./api/controllers/noteCtrl')
 var User = require('./api/models/userModel');
+var FormCtrl = require('./api/controllers/formCtrl');
+var FormTemplateCtrl = require('./api/controllers/formTemplateCtrl');
 
 // Mongoose Contection ---------------
 Mongoose.connect('mongodb://localhost/hr');
@@ -122,6 +124,13 @@ App.get('/api/getnotes/:id', NoteCtrl.getNotes)
 App.get('/api/admin/dashboard/:id', EmployeeCtrl.getUser)
 
 
+App.post('/api/formcreate', FormCtrl.create)
+App.get('/api/employee/openforms/:id', FormCtrl.getOpenFormsById)
+
+App.post('/api/formtemplatecreate', FormTemplateCtrl.create)
+App.get('/api/forms', FormTemplateCtrl.get)
+App.get('/api/form/:id', FormTemplateCtrl.getOne)
+
 App.listen(port, function () {
     console.log("Listing on port --- " + port);
-})
+});

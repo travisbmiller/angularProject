@@ -14,6 +14,8 @@ html, body {
 .mainbodystates {
   padding-left: 40px;
   padding-top: 30px;
+  height: calc(100% - 80px);
+  overflow: auto;
 }
 
 * {
@@ -262,7 +264,7 @@ textarea {
   border-radius: none;
 }
 
-input, select {
+/*input, select {
   width: 100%;
   height: 50px;
   /*margin-bottom: 20px;*/
@@ -274,8 +276,8 @@ input, select {
   padding-left: 20px;
   border-radius: none;
  /* box-shadow: 0px 1px 2px 0px rgba(212,212,212,0.50);*/
-
-}
+ 
+}*/
 
 label {
   display: block;
@@ -371,7 +373,6 @@ button:disabled {
 
 .employeecontainer {
   margin: 0 auto 30px auto;
-  background: red;
   height: 50px;
   width: 400px;
 }
@@ -798,8 +799,7 @@ button:disabled {
 
   .admin_dashboard_wrapper {
     width: 100%;
-    height: 100%;
-    overflow-x: hidden
+    height: calc(100% - 50px);
   }
 
 
@@ -950,16 +950,12 @@ button:disabled {
   }
 
 
-
-
-
-
-
   .mainbody {
     float: left;
     width: calc(100% - 250px);
-    min-height: 100%;
-    background: #EEEEEE;
+    height: 100%;
+    background: #eeeeee;
+    overflow: auto;
   }
 
   .mainbody header {
@@ -990,6 +986,7 @@ button:disabled {
 
   .mainbodystates_header {
     position: relative;
+
   }
 
   .header_btns {
@@ -1008,3 +1005,457 @@ button:disabled {
   }
 
 
+
+
+/* ===============================
+
+  User List 
+
+=================================*/ 
+
+.user_container_wrapper {
+  height: auto;
+  width: 700px;
+  margin-bottom: 20px;
+}
+
+.user_info_container ul {
+  padding: 0;
+  margin: 0;
+}
+
+.user_info_container ul li {
+  float: left;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+}
+
+.user_container {
+  width: 100%;
+  height: 110px;
+  background: #fff;
+  border-radius: 3px 3px 0 0;
+  padding: 15px;
+ 
+}
+
+.user_pic_placeholder {
+  width: 80px;
+  height: 80px;
+  background: #ccc;
+  border-radius: 40px;
+  position: relative;
+  float: left;
+}
+
+.status_circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  background: #2ECC71;
+  position: absolute;
+  bottom: -2px;
+  right: 6px;
+  border: 2px solid #FFF;
+}
+
+.user_info_container {
+  width: 500px;
+  height: 80px;
+  float: left;
+  margin-left: 20px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 200;
+}
+
+.top {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+}
+
+
+.bottom {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+
+.user_container_bar {
+  height: 50px;
+  width: 100%;
+  background: #E6E6E6;
+  border-radius: 0 0 3px 3px;
+  line-height: 50px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.user_container_bar li {
+  width: 190px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700px;
+  font-size: 16px;
+  color: #666666;
+  padding-left: 5px;
+
+}
+
+.user_container_bar i {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.fa.fa-pencil-square-o {
+  font-size: 20px;
+}
+
+.btn_profile {
+    width: 125px;
+    height: 36px;
+    background: #eee;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #666666;
+    font-size: 14px;
+    border-radius: 2px;
+    float: right;
+    position: absolute;
+    right: -70px;
+    top: -10px;
+}
+
+/* ===============================
+
+        Admin Profile Page
+
+=================================*/ 
+
+
+.user_pic_placeholder_admin_page {
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  border-radius: 25px;
+  position: relative;
+  float: left;
+}
+
+.status_circle_admin_page {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background: #2ECC71;
+  position: absolute;
+  bottom: -2px;
+  right: 6px;
+  border: 2px solid #FFF;
+}
+
+.admin_page_user_header {
+  
+  height: 100%;
+  width: 80%;
+  
+}
+
+.admin_page_user_info_container {
+  float: left;
+  padding-left: 20px;
+  position: relative;
+}
+.admin_page_user_info_container .header {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 600px;
+  font-size: 18px;
+  color: #666666;
+
+}
+
+.admin_page_user_info_container .body {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 200px;
+  font-size: 14px;
+  color: #666666;
+  display: block;
+  position: relative;
+  top: -5px;
+}
+
+.admin_page_user_info_container .light {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 100px;
+  font-size: 12px;
+  padding-right: 3px;
+  font-style: italic;
+  color: #4EA0EA;
+}
+
+.block {
+  width: 80%;
+  height: auto;
+  background: #fff;
+  border: 1px solid #dee5e7;
+  position: relative;
+}
+
+.block > header {
+  width: 100%;
+  height: 60px;
+  padding-left: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 60px;
+  color: #666;
+  position: relative;
+}
+
+.block > header .title {
+  display: block;
+  padding-left: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  color: #666;
+  position: absolute;
+  top: -7px;
+  left: 0;
+}
+
+
+.block > header .results {
+  display: block;
+  padding-left: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  color: #666;
+  position: absolute;
+  top: 12px;
+  left: 0;
+
+}
+
+.block > section {
+  max-height: 150px;
+  overflow: auto;
+}
+
+.block .item {
+  height: 50px;
+  border-bottom: 1px dashed #dee5e7;
+  line-height: 50px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.block .item:last-child {
+  border-bottom: none;
+}
+
+.block ul {
+  padding: 0;
+  margin: 0;
+}
+
+.block li {
+  display: block;
+  float: left;
+  width: 25%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===============================
+
+        form View Page
+
+=================================*/ 
+
+  #formview.block {
+  width:100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid #dee5e7;
+  position: relative;
+}
+
+ #formview.block > header {
+  width: 100%;
+  height: 60px;
+  padding-left: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 60px;
+  color: #666;
+  position: relative;
+  background: #F8F8F8;
+}
+
+#inputs {
+  height: 100%;
+}
+
+#inputs .input_wrapper {
+  height: 60px;
+  padding-top: 10px;
+  padding-right: 20px;
+  width: 100%;
+  line-height: 80px;
+  border-bottom: 1px dashed #ccc;
+}
+
+#inputs .input_wrapper > label {
+  width: 20%;
+  height: 34px;
+  line-height: 34px;
+  display: block;
+  float: left;
+  text-align: right;
+  padding-right: 20px;
+}
+
+#inputs .input_wrapper > input {
+    width: 80%;
+    outline: none;
+    border: none;
+    float: left;
+    border: 1px solid #cfdadd;
+    border-radius: 3px;
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+  }
+
+.input_placeholder {
+  width: 80%;
+    outline: none;
+    border: none;
+    float: left;
+    border: 1px solid #cfdadd;
+    border-radius: 3px;
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+}
+
+.form_footer {
+  height: 60px;
+  width: 100%;
+  padding-top: 15px;
+  padding-right: 25px;
+}
+
+.submit {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff !important;
+  background-color: #27C24C;
+  border-color: #23b7e5;
+  font-weight: 500;
+  border-radius: 2px;
+  outline: 0!important;
+  float: right;
+  margin-left: 15px;
+}
+
+.cancel {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff !important;
+  background-color: #F05050;
+  border-color: #23b7e5;
+  font-weight: 500;
+  border-radius: 2px;
+  outline: 0!important;
+  float: right;
+}
+
+
+
+
+/* ===============================
+
+        form View Select - User
+
+=================================*/ 
+
+
+  .select_form {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    padding-top: 5px;
+  }
+
+  .fa.fa-dot-circle-o {
+    font-size: 25px;
+    color: #EEEEEE;
+  }
+
+  .fa.fa-dot-circle-o:hover {
+    color: #1A7CAE;
+  }
+
+
+
+
+
+
+
+
+
+
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}

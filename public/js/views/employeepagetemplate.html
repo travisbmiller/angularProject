@@ -1,13 +1,86 @@
+<div class="admin_dashboard_wrapper cf">
+    <nav>
+        <user-account-sidein user="user"></user-account-sidein>
+        <div class="userinfo_container" id="usericon">
+            <span class="caret-icon"><i class="fa fa-caret-down"></i></span>
+            <div class="userprofile_img_container">
+                <img src='../../imgs/user.png'>
+            </div>
+        </div>  
+    </nav>
 
-<nav>
-    <user-account-sidein user="user"></user-account-sidein>
-    <div class="userinfo_container" id="usericon">
-        <span class="caret-icon"><i class="fa fa-caret-down"></i></span>
-        <div class="userprofile_img_container">
-            <img src='../../imgs/user.png'>
+    <aside>
+        <div>
+  
+            <a ui-sref="userDashboard({ id: user._id })"><div class="nav_tag" >
+                <span class="nav_tag_icon"><i class="fa fa-file"></i><span>
+                <span class="nav_tag_title">Dashboard<span>
+
+            </div></a>
+
+            <a ui-sref="userDashboard.forms"> <div class="nav_tag" >
+                <span class="nav_tag_icon"><i class="fa fa-file"></i><span>
+                <span class="nav_tag_title">Forms<span>
+
+            </div></a>
+
+             
         </div>
+
+
+
+
+    </aside> <!-- End of Side Bar -->
+
+        
+            <ui-view class="mainbody">
+                <header class="mainbodystates_header">
+                    <div class="mainbody_header_title animated fadeIn">
+                        <div class="admin_page_user_header cf">
+                            
+                            Dashboard
+                             
+                        </div>
+                    </div>
+                    
+                    <div class="header_btns">
+                        
+                    <div>
+                </header>
+
+                <div class="mainbodystates animated fadeInUp"> 
+                    
+                    
+
+                    <div class="block">
+                        <header>
+                            <span class="title">Resent Forms Activity</span>
+                            <span class="results">Showing {{ formActivity.length }} results</span>
+                        </header>
+
+                        <section>
+                            <div class="item" ng-repeat="form in formActivity">
+                            <ul>
+                                <li class="each">{{ form.name }}</li>
+                                <li class="each">{{ form.currentStatus }}</li>
+                                <li class="each">{{ form.actions[0].by.fullName }}</li>
+                                <li class="each">{{ form.actions[0].date | date:"MM/dd/yyyy 'at' h:mma" }}</li>
+                            </ul>
+                        
+                            </div>
+                        </section>
+
+                    </div>
+
+
+
+                    
+                </div>            
+            </ui-view>
+        
     </div>
-</nav>
+
+
 
 
 
